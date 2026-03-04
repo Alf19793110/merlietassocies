@@ -1,83 +1,87 @@
-!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Merlin et associés</title>
- <meta name="description" content="Merlin et associés — Syndic, gestion locative, transaction à Paris.">  
-  
-,251,.72);
-  --accent:#7c5cff;
-  --accent2:#25d1ff;
-  --radius:18px;
-  --shadow: 0 20px 60px rgba(0,0,0,.45);
-  --shadow2: 0 12px 30px rgba(0,0,0,.35);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
+  <meta name="description" content="Merlin et associés — Syndic, gestion locative, transaction à Paris.">
 
-/* icones réseaux sociaux */
-nav.lang{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  justify-content:flex-end;
-}
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#0f1117;
+      --card:#121621;
+      --line:rgba(255,255,255,.10);
+      --fg:#f4f6fb;
+      --muted:rgba(244,246,251,.72);
+      --accent:#7c5cff;
+      --accent2:#25d1ff;
+      --radius:18px;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow2: 0 12px 30px rgba(0,0,0,.35);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
 
-.social-icons{
-  display:flex;
-  gap:12px;
-  margin-left:10px;
-}
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 95% 10%, rgba(37,209,255,.18), transparent 55%),
+        var(--bg);
+      color:var(--fg);
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:1100px; margin:0 auto; padding:18px; }
 
-.social-icons img{
- .social-icons a{
-  transition: transform 0.2s ease;
-}
-
-.social-icons a:hover{
-  transform: scale(1.2);
-}  width:22px;
-  height:22px;
-  display:block;
-}
-
-*{ box-sizing:border-box; }
-
-body{
-  margin:0;
-  background:radial-gradient(1200px 800px at 20% -10%, rgba(124,92,255,.22), transparent 55%),
-             radial-gradient(900px 600px at 95% 10%, rgba(37,209,255,.18), transparent 55%),
-             var(--bg);
-  color:var(--fg);
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:18px;
-}
-
-</style>
-    /* Top bar */
-    header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
-            background:rgba(11,12,16,.55); border-bottom:1px solid var(--line); }
-    .top{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    .brand{ display:flex; gap:12px; align-items:center; }
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(10px);
+      background:rgba(11,12,16,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:14px 18px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      min-width:260px;
+    }
     .logo{
-      width:40px; height:40px; border-radius:12px;
+      width:40px;
+      height:40px;
+      border-radius:12px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       box-shadow: 0 10px 30px rgba(124,92,255,.25);
-      display:grid; place-items:center; font-weight:900; letter-spacing:.5px;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      letter-spacing:.5px;
     }
     .brand h1{ margin:0; font-size:18px; }
     .brand p{ margin:2px 0 0; color:var(--muted); font-size:13px; }
 
-    .lang{ display:flex; gap:8px; align-items:center; }
+    /* Lang + Socials (top right) */
+    nav.lang{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
     .lang button{
       border:1px solid var(--line);
       background:rgba(255,255,255,.06);
@@ -94,6 +98,35 @@ a{
       box-shadow: 0 10px 30px rgba(37,209,255,.12);
     }
 
+    .social-icons{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-left:8px;
+      padding-left:10px;
+      border-left:1px solid var(--line);
+    }
+    .social-icons img{
+      width:24px;
+      height:24px;
+      display:block;
+    }
+    .social-icons a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .social-icons a:hover{
+      transform: translateY(-1px) scale(1.08);
+      background:rgba(255,255,255,.07);
+    }
+
     /* Hero */
     .hero{
       margin-top:18px;
@@ -106,7 +139,8 @@ a{
     }
     .hero::before{
       content:"";
-      position:absolute; inset:0;
+      position:absolute;
+      inset:0;
       background:
         linear-gradient(90deg, rgba(11,12,16,.86), rgba(11,12,16,.25)),
         url("https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=2000&q=70");
@@ -115,33 +149,52 @@ a{
       filter:saturate(1.05);
     }
     .hero > .inner{ position:relative; padding:34px 22px; }
-    .hero-grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:16px; align-items:stretch; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:stretch;
+    }
     @media (max-width: 900px){ .hero-grid{ grid-template-columns: 1fr; } }
 
     .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px; border-radius:999px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.07);
       color:var(--muted);
       font-weight:700;
       width: fit-content;
     }
-    .kdot{ width:8px; height:8px; border-radius:99px; background:var(--accent2); box-shadow: 0 0 0 6px rgba(37,209,255,.12); }
+    .kdot{
+      width:8px; height:8px; border-radius:99px;
+      background:var(--accent2);
+      box-shadow: 0 0 0 6px rgba(37,209,255,.12);
+    }
     .hero h2{ margin:12px 0 10px; font-size:34px; line-height:1.12; letter-spacing:-.4px; }
     .hero p{ margin:0; color:rgba(244,246,251,.80); font-size:16px; max-width:60ch; }
+
     .cta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 14px; border-radius:12px; font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:900;
       border:1px solid var(--line);
       background:rgba(255,255,255,.06);
+      transition: transform .15s ease;
     }
     .btn.primary{
       background: linear-gradient(135deg, rgba(124,92,255,.92), rgba(37,209,255,.85));
       border-color: transparent;
     }
-    .btn:hover{ transform: translateY(-1px); transition: transform .15s ease; }
+    .btn:hover{ transform: translateY(-1px); }
 
     .quick{
       border:1px solid var(--line);
@@ -151,21 +204,38 @@ a{
       box-shadow: var(--shadow2);
     }
     .quick h3{ margin:0 0 10px; font-size:14px; color:rgba(244,246,251,.85); letter-spacing:.2px; }
-    .quick .item{ display:flex; gap:10px; padding:10px; border-radius:14px; border:1px solid rgba(255,255,255,.08);
-                  background:rgba(255,255,255,.04); margin-bottom:10px; }
+    .quick .item{
+      display:flex;
+      gap:10px;
+      padding:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      margin-bottom:10px;
+    }
     .quick .item:last-child{ margin-bottom:0; }
     .icon{
-      width:38px; height:38px; border-radius:12px;
+      width:38px; height:38px;
+      border-radius:12px;
       background: rgba(124,92,255,.18);
       border:1px solid rgba(124,92,255,.35);
-      display:grid; place-items:center; font-weight:900;
+      display:grid;
+      place-items:center;
+      font-weight:900;
     }
     .quick .label{ font-weight:900; }
     .quick .sub{ color:var(--muted); font-size:13px; margin-top:2px; }
 
     /* Sections */
     section{ margin-top:18px; }
-    .section-title{ display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .section-title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
     .section-title h3{ margin:0; font-size:20px; letter-spacing:-.2px; }
     .section-title p{ margin:0; color:var(--muted); }
 
@@ -194,10 +264,11 @@ a{
     .card h4{ margin:0 0 6px; font-size:16px; }
     .card p{ margin:0; color:var(--muted); line-height:1.5; }
 
-    /* Listing + portal */
+    /* Grid2 */
     .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
     @media (max-width: 980px){ .grid2{ grid-template-columns: 1fr; } }
 
+    /* Forms */
     form input{
       width:100%;
       padding:10px 12px;
@@ -212,99 +283,108 @@ a{
     .row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
     @media (max-width: 520px){ .row{ grid-template-columns:1fr; } }
 
-    /* Contact */
+    /* Contact + footer */
     .contact-line{ color:var(--muted); line-height:1.6; }
     .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border-radius:999px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.04);
       margin:6px 8px 0 0;
     }
-
-    footer{ margin-top:22px; border-top:1px solid var(--line); padding:18px 0 26px; color:var(--muted); }
+    footer{
+      margin-top:22px;
+      border-top:1px solid var(--line);
+      padding:18px 0 26px;
+      color:var(--muted);
+    }
     .foot{ display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; }
     .tiny{ font-size:12px; color:rgba(244,246,251,.55); }
 
-    /* Motion preference */
     @media (prefers-reduced-motion: reduce){
-      .btn:hover{ transform:none; }
+      .btn:hover, .social-icons a:hover{ transform:none; }
+      .social-icons a{ transition:none; }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="wrap top">
+    <div class="top">
       <div class="brand">
         <div class="logo" aria-hidden="true">M</div>
         <div>
           <h1 id="siteTitle">Merlin et associés</h1>
           <p id="tagline">Syndic · Gestion locative · Transaction — Paris</p>
         </div>
-     
-<nav class="lang" aria-label="Language selector">
-  <button type="button" data-lang="fr" aria-pressed="true">FR</button>
-  <button type="button" data-lang="en" aria-pressed="false">EN</button>
-  <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
 
-  <div class="social-icons" aria-label="Réseaux sociaux">  <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" width="24" height="24" alt="Instagram">
-  </a>
+      <nav class="lang" aria-label="Language selector">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
 
-  <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" width="24" height="24" alt="Facebook">
-  </a>
-</div>
-</nav>
-</header>
+        <!-- Réseaux sociaux en couleur (en haut à droite) -->
+        <div class="social-icons" aria-label="Réseaux sociaux">
+          <!-- Remplace les href par TES liens -->
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" alt="Instagram">
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
   <main class="wrap">
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="inner hero-grid">
-        <div>
-          <div class="kicker"><span class="kdot"></span><span id="kicker">Agence immobilière à Paris 6</span></div>
-          <h2 id="heroTitle">Gestion et accompagnement immobilier, en toute simplicité.</h2>
-          <p id="heroText">
-            Syndic de copropriété, gestion locative et transaction : une équipe disponible, un suivi clair, et des démarches plus faciles.
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="#portal" id="ctaPortal">Accès clients</a>
-            <a class="btn" href="#contact" id="ctaContact">Nous contacter</a>
-            <a class="btn" href="#services" id="ctaServices">Nos services</a>
-<div class="socials">
-  <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" width="24" height="24" alt="Instagram">
-  </a>
+      <div class="inner">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker"><span class="kdot"></span><span id="kicker">Agence immobilière à Paris 6</span></div>
+            <h2 id="heroTitle">Gestion et accompagnement immobilier, en toute simplicité.</h2>
+            <p id="heroText">
+              Syndic de copropriété, gestion locative et transaction : une équipe disponible, un suivi clair, et des démarches plus faciles.
+            </p>
 
-  <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" width="24" height="24" alt="Facebook">
-  </a>
-</div>        </div>
+            <div class="cta-row">
+              <a class="btn primary" href="#portal" id="ctaPortal">Accès clients</a>
+              <a class="btn" href="#contact" id="ctaContact">Nous contacter</a>
+              <a class="btn" href="#services" id="ctaServices">Nos services</a>
+            </div>
+          </div>
 
-        <aside class="quick" aria-label="Highlights">
-          <h3 id="quickTitle">En un coup d’œil</h3>
-          <div class="item">
-            <div class="icon">🏢</div>
-            <div>
-              <div class="label" id="q1Title">Syndic</div>
-              <div class="sub" id="q1Text">Gestion de copropriété &amp; suivi.</div>
+          <aside class="quick" aria-label="Highlights">
+            <h3 id="quickTitle">En un coup d’œil</h3>
+            <div class="item">
+              <div class="icon">🏢</div>
+              <div>
+                <div class="label" id="q1Title">Syndic</div>
+                <div class="sub" id="q1Text">Gestion de copropriété &amp; suivi.</div>
+              </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="icon">🔑</div>
-            <div>
-              <div class="label" id="q2Title">Gestion locative</div>
-              <div class="sub" id="q2Text">Location, quittances, interventions.</div>
+            <div class="item">
+              <div class="icon">🔑</div>
+              <div>
+                <div class="label" id="q2Title">Gestion locative</div>
+                <div class="sub" id="q2Text">Location, quittances, interventions.</div>
+              </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="icon">📍</div>
-            <div>
-              <div class="label" id="q3Title">Transaction</div>
-              <div class="sub" id="q3Text">Vente &amp; achat, estimation.</div>
+            <div class="item">
+              <div class="icon">📍</div>
+              <div>
+                <div class="label" id="q3Title">Transaction</div>
+                <div class="sub" id="q3Text">Vente &amp; achat, estimation.</div>
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -344,7 +424,7 @@ a{
         <h3 id="portalTitle" style="margin:0 0 10px;">Accès clients</h3>
         <p class="help" id="portalSub" style="margin-top:0;">Connectez-vous à votre espace en ligne (Orchestra).</p>
 
-        <form action="https://www.orchestrav2.egiweb.net/admin/pwd.php" method="post" target="_blank" rel="noopener">
+        <form action="https://www.orchestrav2.egiweb.net/admin/pwd.php" method="post" target="_blank">
           <div class="row">
             <div>
               <label for="login" id="lblLogin">Votre login</label>
@@ -384,7 +464,7 @@ a{
         </div>
 
         <p class="help" id="listingNote" style="margin-top:10px;">
-          Conseil : pour éviter un back-office, vous pouvez publier vos annonces sur une page simple (ou un PDF) et mettre ici un lien.
+          Conseil : pour éviter un back-office, publiez vos annonces sur une page simple (ou un PDF) et mettez ici un lien.
         </p>
       </div>
     </section>
@@ -444,120 +524,3 @@ a{
         q1Title:"Syndic", q1Text:"Gestion de copropriété & suivi.",
         q2Title:"Gestion locative", q2Text:"Location, quittances, interventions.",
         q3Title:"Transaction", q3Text:"Vente & achat, estimation.",
-        servicesTitle:"Nos services", servicesSub:"Un accompagnement clair, du quotidien aux projets importants.",
-        s1Title:"Syndic de copropriété", s1Text:"Assemblées générales, budget, travaux, prestataires : un suivi rigoureux et une communication simple.",
-        s2Title:"Gestion locative", s2Text:"Mise en location, gestion administrative, loyers, interventions : votre bien est géré au quotidien.",
-        s3Title:"Transaction", s3Text:"Transaction", s3Text:"Accompagnement vente/achat, estimation, visites, dossier : une démarche efficace et sécurisée.",
-        portalTitle:"Accès clients", portalSub:"Connectez-vous à votre espace en ligne (Orchestra).",
-        lblLogin:"Votre login", lblPwd:"Mot de passe", btnLogin:"Connexion",
-        forgot:"Mot de passe oublié ?",
-        portalNote:"Astuce : si vous n’avez pas vos identifiants, contactez-nous.",
-        listingTitle:"À la une", listingSub:"Exemple d’annonce. Vous pourrez remplacer par vos biens.",
-        listingName:"3 pièces — 75,95 m²", listingWhere:"Paris 16", listingBtn:"Voir l’annonce",
-        listingNote:"Conseil : pour éviter un back-office, publiez vos annonces sur une page simple (ou un PDF) et mettez ici un lien.",
-        aboutTitle:"Qui sommes-nous",
-        aboutText:"Implantés à Paris, nous accompagnons propriétaires et copropriétaires avec une gestion de proximité, des réponses claires et un suivi fiable.",
-        aboutP1:"✔ Suivi & transparence", aboutP2:"✔ Réactivité", aboutP3:"✔ Expérience locale",
-        contactTitle:"Contact",
-        contactMail:"Envoyer un e-mail", contactCall:"Appeler", legal:"Mentions légales",
-        privacy:"(Ce site est une vitrine statique : pas de base de données, pas de back-office.)",
-        footName:"Merlin et associés", footRight:"Site vitrine trilingue — FR / EN / ES"
-      },
-      en: {
-        siteTitle:"Merlin & Associés",
-        tagline:"Co-ownership Management · Rentals · Sales — Paris",
-        kicker:"Real estate agency in Paris 6",
-        heroTitle:"Real estate management made simple.",
-        heroText:"Co-ownership management, rental management and sales: a responsive team, clear follow-up, and simpler processes.",
-        ctaPortal:"Client portal", ctaContact:"Contact", ctaServices:"Services",
-        quickTitle:"At a glance",
-        q1Title:"Co-ownership", q1Text:"Building management & follow-up.",
-        q2Title:"Rentals", q2Text:"Leases, payments, maintenance.",
-        q3Title:"Sales", q3Text:"Buy & sell, valuation.",
-        servicesTitle:"Services", servicesSub:"Clear support for day-to-day matters and key projects.",
-        s1Title:"Co-ownership Management", s1Text:"Meetings, budgets, works, vendors: rigorous oversight with simple communication.",
-        s2Title:"Rental Management", s2Text:"Lettings, administration, rent collection, maintenance: your property managed daily.",
-        s3Title:"Sales & Acquisitions", s3Text:"Selling/buying support, valuation, viewings, file preparation: efficient and secure.",
-        portalTitle:"Client Portal", portalSub:"Sign in to your online area (Orchestra).",
-        lblLogin:"Username", lblPwd:"Password", btnLogin:"Sign in",
-        forgot:"Forgot your password?",
-        portalNote:"Tip: if you don’t have your credentials, please contact us.",
-        listingTitle:"Featured", listingSub:"Sample listing. Replace with your properties.",
-        listingName:"3-room apartment — 75.95 m²", listingWhere:"Paris 16th", listingBtn:"View listing",
-        listingNote:"Tip: to avoid a back office, publish listings on a simple page (or PDF) and link it here.",
-        aboutTitle:"About Us",
-        aboutText:"Based in Paris, we support owners and co-owners with hands-on management, clear answers and reliable follow-up.",
-        aboutP1:"✔ Clear follow-up", aboutP2:"✔ Responsiveness", aboutP3:"✔ Local expertise",
-        contactTitle:"Contact",
-        contactMail:"Send an email", contactCall:"Call", legal:"Legal notice",
-        privacy:"(Static showcase website: no database, no back office.)",
-        footName:"Merlin & Associés", footRight:"Trilingual showcase — FR / EN / ES"
-      },
-      es: {
-        siteTitle:"Merlin & Associés",
-        tagline:"Administración · Alquileres · Compraventa — París",
-        kicker:"Agencia inmobiliaria en París 6",
-        heroTitle:"Gestión inmobiliaria, más simple.",
-        heroText:"Administración de comunidades, gestión de alquileres y compraventa: un equipo cercano, seguimiento claro y trámites más fáciles.",
-        ctaPortal:"Acceso clientes", ctaContact:"Contacto", ctaServices:"Servicios",
-        quickTitle:"De un vistazo",
-        q1Title:"Comunidades", q1Text:"Gestión y seguimiento.",
-        q2Title:"Alquileres", q2Text:"Contratos, cobros, incidencias.",
-        q3Title:"Compraventa", q3Text:"Compra/venta, valoración.",
-        servicesTitle:"Servicios", servicesSub:"Acompañamiento claro en el día a día y en proyectos importantes.",
-        s1Title:"Administración de comunidades", s1Text:"Juntas, presupuestos, obras y proveedores: control riguroso y comunicación sencilla.",
-        s2Title:"Gestión de alquileres", s2Text:"Alquiler, administración, cobro de rentas e incidencias: su vivienda gestionada a diario.",
-        s3Title:"Compraventa", s3Text:"Apoyo en compra/venta, valoración, visitas y documentación: eficaz y seguro.",
-        portalTitle:"Acceso clientes", portalSub:"Acceda a su área en línea (Orchestra).",
-        lblLogin:"Usuario", lblPwd:"Contraseña", btnLogin:"Entrar",
-        forgot:"¿Olvidó su contraseña?",
-        portalNote:"Consejo: si no tiene sus credenciales, contáctenos.",
-        listingTitle:"Destacado", listingSub:"Anuncio de ejemplo. Sustitúyalo por sus propiedades.",
-        listingName:"Piso de 3 habitaciones — 75,95 m²", listingWhere:"París 16.º", listingBtn:"Ver anuncio",
-        listingNote:"Consejo: para evitar un back-office, publique anuncios en una página simple (o PDF) y enlace aquí.",
-        aboutTitle:"Quiénes somos",
-        aboutText:"Con sede en París, acompañamos a propietarios y copropietarios con una gestión cercana, respuestas claras y seguimiento fiable.",
-        aboutP1:"✔ Seguimiento claro", aboutP2:"✔ Rapidez", aboutP3:"✔ Experiencia local",
-        contactTitle:"Contacto",
-        contactMail:"Enviar email", contactCall:"Llamar", legal:"Aviso legal",
-        privacy:"(Sitio estático: sin base de datos, sin back-office.)",
-        footName:"Merlin & Associés", footRight:"Vitrina trilingüe — FR / EN / ES"
-      }
-    };
-
-    const ids = [
-      "siteTitle","tagline","kicker","heroTitle","heroText",
-      "ctaPortal","ctaContact","ctaServices",
-      "quickTitle","q1Title","q1Text","q2Title","q2Text","q3Title","q3Text",
-      "servicesTitle","servicesSub",
-      "s1Title","s1Text","s2Title","s2Text","s3Title","s3Text",
-      "portalTitle","portalSub","lblLogin","lblPwd","btnLogin","forgot","portalNote",
-      "listingTitle","listingSub","listingName","listingWhere","listingBtn","listingNote",
-      "aboutTitle","aboutText","aboutP1","aboutP2","aboutP3",
-      "contactTitle","contactMail","contactCall","legal","privacy",
-      "footName","footRight"
-    ];
-
-    const buttons = document.querySelectorAll("button[data-lang]");
-    const html = document.documentElement;
-
-    function setLang(lang){
-      buttons.forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"));
-      ids.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.textContent = T[lang][id];
-      });
-      html.lang = lang;
-      localStorage.setItem("lang", lang);
-    }
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    buttons.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-
-    const saved = localStorage.getItem("lang");
-    setLang(saved && T[saved] ? saved : "fr");
-  </script>
-</body>
-</html>
